@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akacia Howell Photography — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="brand">Akacia <span>Howell</span> Photography</div>
+    <ul>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" role="banner" aria-label="Photographer at work with camera">
+    <div>
+      <h1>Portraits • Urban • Events</h1>
+      <p>Story-driven images captured across Trenton & beyond.</p>
+      <div class="pill">By Akacia Howell</div>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <main class="wrap" id="portfolio">
+    <div class="heading">
+      <h2>Selected Work</h2>
+      <p>Click any image to view large.</p>
+    </div>
+
+    <div class="gallery" role="list" aria-label="Image gallery">
+      <!-- Your images -->
+      <figure class="gallery-item" role="listitem">
+        <img loading="lazy"
+             src="https://th.bing.com/th/id/OIP.adzcuZWcsWDzLpOmEJ2ZigHaLI?w=155&h=150&c=6&o=7&cb=12&dpr=1.3&pid=1.7&rm=3"
+             alt="Editorial portrait in natural light"
+             onclick="openModal(this.src, 'Editorial portrait • natural light')" />
+        <figcaption class="caption">Editorial Portrait</figcaption>
+      </figure>
+
+      <figure class="gallery-item" role="listitem">
+        <img loading="lazy"
+             src="https://th.bing.com/th/id/OIP.HimWSoZASQHKlaSxefTRBwHaEL?w=285&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3"
+             alt="Concert crowd with stage lights"
+             onclick="openModal(this.src, 'Live event • concert energy')" />
+        <figcaption class="caption">Live Event</figcaption>
+      </figure>
+
+      <figure class="gallery-item" role="listitem">
+        <img loading="lazy"
+             src="https://th.bing.com/th/id/OIP.to_Fvtd2MVDK4z6DtpieugHaEo?w=232&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3"
+             alt="Urban nighttime skyline long exposure"
+             onclick="openModal(this.src, 'Urban nights • long exposure')" />
+        <figcaption class="caption">Urban Nights</figcaption>
+      </figure>
+
+      <!-- Optional echo to balance grid -->
+      <figure class="gallery-item" role="listitem">
+        <img loading="lazy"
+             src="https://th.bing.com/th/id/OIP.adzcuZWcsWDzLpOmEJ2ZigHaLI?w=155&h=150&c=6&o=7&cb=12&dpr=1.3&pid=1.7&rm=3"
+             alt="Editorial portrait in natural light"
+             onclick="openModal(this.src, 'Editorial portrait • natural light')" />
+        <figcaption class="caption">Editorial Portrait</figcaption>
+      </figure>
+      <figure class="gallery-item" role="listitem">
+        <img loading="lazy"
+             src="https://th.bing.com/th/id/OIP.HimWSoZASQHKlaSxefTRBwHaEL?w=285&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3"
+             alt="Concert crowd with stage lights"
+             onclick="openModal(this.src, 'Live event • concert energy')" />
+        <figcaption class="caption">Live Event</figcaption>
+      </figure>
+      <figure class="gallery-item" role="listitem">
+        <img loading="lazy"
+             src="https://th.bing.com/th/id/OIP.to_Fvtd2MVDK4z6DtpieugHaEo?w=232&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3"
+             alt="Urban nighttime skyline long exposure"
+             onclick="openModal(this.src, 'Urban nights • long exposure')" />
+        <figcaption class="caption">Urban Nights</figcaption>
+      </figure>
+    </div>
+
+    <!-- About + Contact -->
+    <div class="cards" id="about">
+      <div class="card">
+        <h3>About Akacia</h3>
+        <p>
+          I’m a Trenton-based photographer blending tech and art—shooting portraits,
+          live events, and urban stories. Available for bookings, collabs, and print orders.
+        </p>
+        <div class="badges">
+          <span class="badge">Portraits</span>
+          <span class="badge">Events</span>
+          <span class="badge">Urban</span>
+          <span class="badge">Retouching</span>
+        </div>
+      </div>
+      <div class="card contact" id="contact">
+        <h3>Contact</h3>
+        <p>
+          Email: <a href="mailto:itashahowell@icloud.com">itashahowell@icloud.com</a><br/>
+          Phone: <a href="tel:+16097804664">609-780-4664</a><br/>
+          Based in Trenton, NJ • Available statewide
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div id="myModal" class="modal" aria-hidden="true" aria-label="Image viewer">
+    <span class="close" role="button" aria-label="Close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" class="modal-content" alt="">
+    <div id="modalMeta" class="meta"></div>
+  </div>
+
+  <footer>© <span id="year"></span> Akacia Howell Photography</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

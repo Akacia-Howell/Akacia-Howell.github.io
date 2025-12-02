@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Akacia’s Portfolio Showcase & Tech Meetup 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ============ EDIT ME (quick tweaks) ============ */
+    :root{
+      --brand:#6c5ce7;           /* primary brand (indigo/purple) */
+      --brand-ink:#ffffff;       /* text on brand */
+      --ink:#2d3436;             /* body text */
+      --bg:#f6f7fb;              /* page background */
+      --accent:#00b894;          /* teal accent */
+      --muted:#eef0f6;           /* table header / chips */
+      --shadow:0 6px 18px rgba(0,0,0,.12);
+      --radius:12px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height:1.6; margin:0; color:var(--ink); background:var(--bg);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* -------- HERO with photo banner -------- */
+    header{
+      color:var(--brand-ink); text-align:center; padding:72px 16px 28px;
+      position:relative; overflow:hidden;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      box-shadow:0 4px 16px rgba(0,0,0,.15);
+    }
+    header h1{margin:0 0 10px; font-size:clamp(28px,4vw,44px)}
+    header p{margin:0; opacity:.95}
+    .chiprow{margin-top:18px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap}
+    .chip{
+      background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.35);
+      color:#fff; padding:6px 12px; border-radius:999px; font-size:.95rem; backdrop-filter: blur(6px);
+    }
+    .cta{
+      margin-top:22px; display:inline-block; background:var(--accent); color:#062b24; font-weight:800;
+      padding:12px 18px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;
+    }
+    .cta.alt{background:#fff; color:#1b1b1b}
+
+    nav{
+      background:#1f1f2e; color:#fff; display:flex; justify-content:center;
+      gap:22px; padding:12px; position:sticky; top:0; z-index:10;
+    }
+    nav a{color:#fff; font-weight:600; letter-spacing:.4px}
+    nav a:hover{color:#ffd166}
+
+    section{
+      max-width:1000px; margin:22px auto; background:#fff; border-radius:var(--radius);
+      box-shadow:0 2px 10px rgba(0,0,0,.06); padding:22px; transition:box-shadow .2s ease;
+    }
+    section:hover{box-shadow:var(--shadow)}
+    section h2{color:var(--brand); margin:0 0 10px}
+    .lead{margin-top:0; color:#555}
+
+    .grid{display:grid; gap:16px}
+    @media(min-width:820px){
+      .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+      .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    }
+    .card{background:#fff; border:1px solid #eee; border-radius:14px; padding:16px; box-shadow:0 1px 6px rgba(0,0,0,.05)}
+    .card h3{margin:0 0 6px; color:#222}
+    .meta{font-size:.95rem; color:#666}
+
+    table{width:100%; border-collapse:collapse; margin-top:12px; overflow:hidden; border-radius:10px}
+    th,td{padding:12px; border-bottom:1px solid #eee; text-align:left}
+    th{background:var(--muted); color:#333}
+    tr:nth-child(even){background:#fafafa}
+
+    ul.clean{list-style:none; padding:0; margin:0}
+    ul.clean li{margin:10px 0; font-size:1.05rem}
+    ul.clean li strong{color:var(--brand)}
+
+    form{max-width:680px; margin:10px auto}
+    label{display:block; font-weight:600; margin:10px 0 6px}
+    input, textarea, select, button{
+      width:100%; padding:14px; border:1px solid #ddd; border-radius:10px; font-size:1rem;
+    }
+    input:focus, textarea:focus, select:focus{outline:none; border-color:var(--brand)}
+    button{
+      background:var(--brand); color:#fff; border:none; cursor:pointer; font-weight:700;
+      transition:transform .05s ease, background .2s ease;
+    }
+    button:hover{background:#584bd6}
+    button:active{transform:translateY(1px)}
+    .row{display:grid; gap:12px}
+    @media(min-width:640px){ .row.two{grid-template-columns:1fr 1fr} }
+
+    footer{max-width:1000px; margin:28px auto 42px; color:#666; text-align:center}
+    .tiny{font-size:.9rem}
+    .pill{display:inline-block; padding:6px 12px; background:var(--muted); border-radius:999px; font-weight:600}
+    .center{text-align:center}
+    .actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Akacia’s Portfolio Showcase & Tech Meetup 2025</h1>
+    <p>Celebrate code, cybersecurity, and creativity with friends, mentors, and collaborators.</p>
+    <div class="chiprow">
+      <span class="chip">Saturday • November 15, 2025 • 2:00–6:00 PM</span>
+      <span class="chip">Mercer County Community College — Student Center</span>
+      <span class="chip">1200 Old Trenton Rd, West Windsor, NJ 08550</span>
+    </div>
+    <div class="actions">
+      <a href="#rsvp" class="cta">RSVP Now</a>
+      <button class="cta alt" onclick="downloadICS()">Add to Calendar (.ics)</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#guests">Special Guests</a>
+    <a href="#details">Event Details</a>
+    <a href="#rsvp">RSVP</a>
+  </nav>
+
+  <section id="about">
+    <h2>About the Event</h2>
+    <p class="lead">
+      A personal celebration of milestones—wrapping up CS projects, launching a Cybersecurity journey at Rider,
+      and debuting a mini photo gallery. Demos, lightning talks, music, snacks, and great vibes.
+    </p>
+
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Code Corner</h3>
+        <p class="meta">Java projects, HTML/CSS sites, and a peek at security tools.</p>
+      </div>
+      <div class="card">
+        <h3>Photo Gallery</h3>
+        <p class="meta">Curated shots from events, campus life, and travel.</p>
+      </div>
+      <div class="card">
+        <h3>Community</h3>
+        <p class="meta">Mentors, classmates, and friends—share tips, stories, and opportunities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <h2>Schedule</h2>
+    <table>
+      <thead>
+        <tr><th>Time</th><th>Session</th><th>Host</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2:00 PM</td><td>Welcome & Icebreaker</td><td>Akacia</td></tr>
+        <tr><td>2:20 PM</td><td>Showcase: Java & Web Projects</td><td>Akacia + Friends</td></tr>
+        <tr><td>3:00 PM</td><td>Lightning Talks: Cybersecurity Basics</td><td>Guest Speakers</td></tr>
+        <tr><td>3:30 PM</td><td>Break • Snacks & Photos</td><td>—</td></tr>
+        <tr><td>3:50 PM</td><td>Photo Gallery Walkthrough</td><td>Akacia</td></tr>
+        <tr><td>4:25 PM</td><td>Mini-Workshop: Active Learning & Study Hacks</td><td>Peer Mentors</td></tr>
+        <tr><td>5:00 PM</td><td>Open Mic • Gratitudes • Networking</td><td>All</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="guests">
+    <h2>Special Guests</h2>
+    <ul class="clean">
+      <li><strong>Mentors & Faculty:</strong> Career tips, transfer advice, and study strategies.</li>
+      <li><strong>Peer Collaborators:</strong> Project demos and group showcase moments.</li>
+      <li><strong>Family & Friends:</strong> Support squad—photos, cheers, and snacks duty!</li>
+    </ul>
+  </section>
+
+  <section id="details">
+    <h2>Event Details</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Venue</h3>
+        <p class="meta"><strong>Mercer County Community College — Student Center</strong><br>
+          1200 Old Trenton Rd, West Windsor, NJ 08550</p>
+        <p><span class="pill">Parking</span> Free on-site • <span class="pill">Accessibility</span> ADA-friendly</p>
+      </div>
+      <div class="card">
+        <h3>What to Bring</h3>
+        <ul class="clean">
+          <li>Curiosity and good vibes</li>
+          <li>Optional: Laptop for demos</li>
+          <li>Optional: Printed resume / portfolio</li>
+        </ul>
+      </div>
+    </div>
+    <div class="center" style="margin-top:10px">
+      <button onclick="downloadICS()">Add to Calendar (.ics)</button>
+    </div>
+  </section>
+
+  <section id="rsvp">
+    <h2>RSVP</h2>
+    <p class="lead">Please RSVP so we can plan snacks, seating, and name tags.</p>
+    <form onsubmit="event.preventDefault(); handleRSVP(this);">
+      <div class="row two">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+      </div>
+
+      <div class="row two">
+        <div>
+          <label for="guests"># in Your Party</label>
+          <select id="guests" name="guests" required>
+            <option value="" disabled selected>Select…</option>
+            <option>1</option><option>2</option><option>3</option><option>4+</option>
+          </select>
+        </div>
+        <div>
+          <label for="role">Role (pick one)</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected>Select…</option>
+            <option>Friend/Family</option>
+            <option>Mentor/Faculty</option>
+            <option>Classmate</option>
+            <option>Industry Guest</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="message">Message (dietary needs, shoutouts, etc.)</label>
+      <textarea id="message" name="message" rows="4" placeholder="Anything we should know?"></textarea>
+
+      <button type="submit">Submit RSVP</button>
+      <p id="rsvp-status" class="center tiny" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+ <footer class="tiny">
+  © 2025 Akacia Howell | Designed with ❤️ and creativity. All rights reserved.
+</footer>
+
+
+  <script>
+    // RSVP storage (demo only)
+    function handleRSVP(form){
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        guests: form.guests.value,
+        role: form.role.value,
+        message: form.message.value.trim(),
+        ts: new Date().toISOString()
+      };
+      if(!data.name || !data.email || !data.guests || !data.role){
+        announce("Please complete all required fields.");
+        return;
+      }
+      const key = "akacia_event_rsvps";
+      const list = JSON.parse(localStorage.getItem(key) || "[]");
+      list.push(data);
+      localStorage.setItem(key, JSON.stringify(list));
+      form.reset();
+      announce("Thanks! Your RSVP was recorded. Check your email for updates soon.");
+    }
+    function announce(msg){
+      const el = document.getElementById("rsvp-status");
+      el.textContent = msg;
+    }
+
+    // ----- .ics generator -----
+    // Event: Sat Nov 15, 2025 2:00–6:00 PM America/New_York (EST, UTC-5)
+    // UTC times: 19:00Z–23:00Z
+    function downloadICS(){
+      const title = "Akacia’s Portfolio Showcase & Tech Meetup 2025";
+      const description = "Personal showcase of CS projects, cybersecurity mini-talks, and photo gallery. Demos, snacks, and networking.";
+      const location = "MCCC Student Center, 1200 Old Trenton Rd, West Windsor, NJ 08550";
+      const startUTC = "20251115T190000Z"; // 2:00 PM EST
+      const endUTC   = "20251115T230000Z"; // 6:00 PM EST
+      const uid = "akacia-showcase-2025-1115@mccc";
+      const now = new Date().toISOString().replace(/[-:]/g,"").split(".")[0] + "Z";
+
+      const ics = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Akacia Event//EN",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "BEGIN:VEVENT",
+        "UID:" + uid,
+        "DTSTAMP:" + now,
+        "DTSTART:" + startUTC,
+        "DTEND:" + endUTC,
+        "SUMMARY:" + escapeICS(title),
+        "DESCRIPTION:" + escapeICS(description),
+        "LOCATION:" + escapeICS(location),
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\\r\\n");
+
+      const blob = new Blob([ics], {type: "text/calendar;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Akacia_Showcase_2025.ics";
+      document.body.appendChild(a);
+      a.click();
+      URL.revokeObjectURL(url);
+      a.remove();
+    }
+
+    function escapeICS(text){
+      return text
+        .replace(/\\n/g, "\\n")
+        .replace(/,/g, "\\,")
+        .replace(/;/g, "\\;")
+        .replace(/\\r/g, "")
+        .replace(/\\t/g, " ");
+    }
+  </script>
+</body>
+</html>

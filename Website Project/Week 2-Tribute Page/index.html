@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tribute to Akacia Howell</title>
+
+  <style>
+    /* Global reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0b1020, #1a2340, #283a5b);
+      color: #f9f9ff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 15px;
+    }
+
+    .page-wrapper {
+      max-width: 1000px;
+      width: 100%;
+      background: #111528;
+      border-radius: 16px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+    }
+
+    /* Hero / header */
+    .hero {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.55);
+      transform: scale(1.03);
+      transition: transform 8s ease-out;
+    }
+
+    .hero:hover img {
+      transform: scale(1.07);
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: radial-gradient(circle at top, rgba(255,255,255,0.18), transparent 55%);
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 600px;
+      opacity: 0.9;
+    }
+
+    /* Main content */
+    .content {
+      padding: 28px 26px 30px;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #e0e4ff;
+    }
+
+    .intro span.highlight {
+      color: #7ec8ff;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1.3fr;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .card {
+      background: rgba(12, 18, 40, 0.98);
+      border-radius: 14px;
+      padding: 18px 18px 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(126, 200, 255, 0.08);
+      backdrop-filter: blur(4px);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .card p {
+      font-size: 0.96rem;
+      line-height: 1.6;
+      color: #d6dbff;
+    }
+
+    .tag-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(126, 200, 255, 0.12);
+      border: 1px solid rgba(126, 200, 255, 0.35);
+      color: #c8e7ff;
+    }
+
+    /* Side image card */
+    .side-image-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      object-fit: cover;
+      max-height: 210px;
+    }
+
+    .side-image-card p {
+      font-size: 0.9rem;
+    }
+
+    /* Gallery */
+    .gallery-title {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-top: 6px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(126, 200, 255, 0.25);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.8s ease, filter 0.4s ease;
+      filter: brightness(0.85);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(1);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 10px;
+      bottom: 8px;
+      font-size: 0.8rem;
+      background: rgba(4, 8, 20, 0.75);
+      padding: 4px 8px;
+      border-radius: 999px;
+      color: #e5f3ff;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid rgba(126, 200, 255, 0.16);
+      margin-top: 18px;
+      padding-top: 14px;
+      font-size: 0.85rem;
+      text-align: center;
+      color: #a4afd8;
+    }
+
+    .footer span {
+      color: #7ec8ff;
+    }
+
+    /* Responsive */
+    @media (max-width: 780px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .content {
+        padding: 22px 18px 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 25px 10px;
+      }
+
+      .hero {
+        height: 220px;
+      }
+
+      .hero-title {
+        font-size: 1.6rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Hero section with coding image -->
+    <header class="hero">
+      <img src="https://www.thecoderpedia.com/wp-content/uploads/2020/06/How-to-learn-Programming.jpg" alt="Coding background">
+      <div class="hero-content">
+        <h1 class="hero-title">Tribute to Akacia Howell</h1>
+        <p class="hero-subtitle">
+          A dedicated computer science student with a passion for cybersecurity, growth, and helping others succeed.
+        </p>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- Intro -->
+      <section class="intro">
+        <p>
+          This page celebrates <span class="highlight">Akacia Howell</span> — a driven learner, future cybersecurity
+          professional, and supportive mentor. From long hours of coding projects to balancing classes, labs, and
+          campus involvement at Mercer County Community College, Akacia continues to grow academically and personally
+          while inspiring others along the way.
+        </p>
+      </section>
+
+      <!-- Main grid -->
+      <section class="grid">
+        <!-- About / Journey -->
+        <article class="card">
+          <h2>About Akacia</h2>
+          <p>
+            Akacia is pursuing Computer Science with a strong focus on Cybersecurity. Through coursework in programming,
+            web development, ethics, chemistry, biology, psychology, and more, she has built a wide foundation that
+            connects technology with real life. Her journey includes late-night study sessions, hands-on labs, and
+            constant curiosity about how systems work and how to protect them.
+          </p>
+          <br>
+          <p>
+            Outside of classes, Akacia has been involved in mentoring and support roles, helping other students navigate
+            their own academic paths. Her story is not just about personal success, but about lifting others up with her.
+          </p>
+
+          <div class="tag-row">
+            <span class="tag">Computer Science</span>
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">Mentor</span>
+            <span class="tag">Lifelong Learner</span>
+          </div>
+        </article>
+
+        <!-- Side image + short text (MCCC photo) -->
+        <aside class="card side-image-card">
+          <img src="https://www.mccc.edu/pr/General/2020/images/mcccGenericPhoto430.jpg"
+               alt="Mercer County Community College campus">
+          <h2>Mercer Roots</h2>
+          <p>
+            Mercer County Community College has been a key part of Akacia’s journey — a place where her interest in
+            cybersecurity, programming, and problem-solving has been shaped by challenging courses and supportive
+            professors.
+          </p>
+        </aside>
+      </section>
+
+      <!-- Gallery / Visual tribute -->
+      <section class="card">
+        <h2 class="gallery-title">Visual Tribute</h2>
+        <p>
+          These images reflect the blend of creativity, focus, and ambition that define Akacia’s path — from lines of
+          code to dreams that reach far beyond the classroom.
+        </p>
+
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="https://www.thecoderpedia.com/wp-content/uploads/2020/06/How-to-learn-Programming.jpg"
+                 alt="Programming and code">
+            <div class="gallery-caption">Always learning to think in code.</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://wallpapercave.com/wp/wp7396227.jpg"
+                 alt="Galaxy and futuristic technology">
+            <div class="gallery-caption">Big dreams, limitless possibilities.</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://www.mccc.edu/pr/General/2020/images/mcccGenericPhoto430.jpg"
+                 alt="MCCC campus view">
+            <div class="gallery-caption">Where the journey grows stronger.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer line -->
+      <footer class="footer">
+        In honor of <span>Akacia Howell</span> — proving every semester that persistence, faith, and hard work can
+        rewrite the future.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

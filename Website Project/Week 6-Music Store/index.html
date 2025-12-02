@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Irie Sound Fest — Live Music Night</title>
+  <style>
+    :root{
+      --brand:#ff2d55;
+      --bg:#0b0b0b;
+      --text:#f5f5f5;
+      --muted:#cfcfcf;
+      --card:#151515;
+      --accent:#ffd200;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{min-height:100vh;position:relative}
+
+    /* Top Nav */
+    .nav{
+      position:fixed;top:0;left:0;right:0;z-index:20;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:12px 20px;background:rgba(0,0,0,.45);backdrop-filter: blur(6px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .brand{font-weight:800;letter-spacing:.5px}
+    .brand span{color:var(--brand)}
+    .nav ul{list-style:none;display:flex;gap:10px}
+    .nav a{
+      display:block;padding:8px 12px;border-radius:999px;
+      font-size:.95rem;color:var(--muted)
+    }
+    .nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+
+    /* Hero */
+    .hero{
+      height:100vh;width:100%;
+      background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.6)),
+        url('https://th.bing.com/th/id/OIP.NpVHbpa0j_OPgAt8CPBosgHaEJ?w=279&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3');
+      background-size: cover;background-position:center;
+      display:grid;place-items:center;padding:100px 20px 40px;
+      text-align:center;
+    }
+    .hero .title{
+      font-size:clamp(2.2rem, 5vw, 4rem);font-weight:900;line-height:1.05;
+      text-transform:uppercase;letter-spacing:1px;
+    }
+    .hero .subtitle{margin-top:10px;color:var(--muted);font-size:1.05rem}
+    .pill{
+      margin-top:14px;display:inline-block;background:rgba(255,255,255,.12);
+      padding:6px 12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;
+      font-size:.9rem;color:#fff
+    }
+    .cta{
+      margin-top:22px;display:inline-flex;align-items:center;gap:10px;
+      background:var(--brand);color:#fff;border:0;border-radius:14px;
+      padding:12px 18px;font-weight:700;cursor:pointer;
+      box-shadow: 0 6px 18px rgba(255,45,85,.35);
+    }
+    .cta:hover{transform: translateY(-1px)}
+    .controls{display:flex;gap:14px;justify-content:center;margin-top:16px}
+    .control-btn{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--card);border:1px solid rgba(255,255,255,.08);
+      padding:10px 14px;border-radius:12px;cursor:pointer;color:#fff
+    }
+    .control-btn:hover{background:#1d1d1d}
+
+    /* Sections */
+    section{padding:64px 20px}
+    .wrap{max-width:1100px;margin:0 auto}
+    .two{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;
+    }
+    .card{
+      background:var(--card);border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;padding:18px
+    }
+    .card h3{font-size:1.2rem;margin-bottom:6px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .badge{display:inline-block;background:#222;border:1px solid rgba(255,255,255,.08);
+      padding:6px 10px;border-radius:999px;color:var(--muted);font-size:.85rem}
+    .artists{
+      background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65)),
+        url('https://th.bing.com/th/id/OIP.uLmLgdVyOB2x1ShCHQyv1QHaD4?w=306&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3');
+      background-size:cover;background-position:center;
+      border-radius:18px;overflow:hidden;min-height:260px;display:grid;place-items:center;
+      text-align:center;padding:24px;border:1px solid rgba(255,255,255,.1)
+    }
+    .artists h2{font-size:clamp(1.4rem,3.5vw,2.2rem)}
+    .artists p{color:#eaeaea;max-width:700px;margin:8px auto 0}
+    footer{
+      text-align:center;color:var(--muted);padding:28px 20px;border-top:1px solid rgba(255,255,255,.08)
+    }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .two{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="brand">Irie <span>Sound</span> Fest</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#artists">Artists</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero container" role="banner" aria-label="Concert crowd with lights">
+    <div>
+      <div class="pill">Presented by Akacia Howell</div>
+      <h1 class="title">Live Music Night • Trenton</h1>
+      <p class="subtitle">Saturday, November 22 • 7:00 PM • CURE Insurance Arena, NJ</p>
+
+      <button class="cta" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})">
+        Get Tickets
+        <span aria-hidden="true">🎟️</span>
+      </button>
+
+      <div class="controls" id="music">
+        <button class="control-btn" id="playToggle" aria-label="Play or pause sample track">
+          <span id="iconEmoji" aria-hidden="true">▶️</span> Listen Preview
+        </button>
+        <a class="control-btn" href="#lineup">View Lineup</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- INFO / LINEUP -->
+  <section class="wrap two" id="lineup" aria-label="Event details and lineup">
+    <div class="card">
+      <h3>About the Event</h3>
+      <p>
+        Irie Sound Fest brings a high-energy mix of reggae, R&amp;B, and hip-hop to Trenton for one unforgettable night.
+        Good vibes, live bands, and a DJ closing set. Family-friendly and student-friendly!
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <span class="badge">All Ages</span>
+        <span class="badge">Doors 6:00 PM</span>
+        <span class="badge">Merch Booth</span>
+        <span class="badge">Food Trucks</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
+        <div class="card">
+          <h3>Date &amp; Location</h3>
+          <p>Nov 22, 7:00 PM • CURE Insurance Arena, Trenton, NJ</p>
+        </div>
+        <div class="card" id="tickets">
+          <h3>Tickets</h3>
+          <p>General $35 • Student $20 (ID) • VIP $85</p>
+          <a class="cta" href="#" onclick="alert('Hook this up to your ticketing link!')" aria-label="Buy tickets">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Lineup</h3>
+      <ul style="margin-top:6px;list-style: none; padding-left:0">
+        <li>• DJ Akacia — Opening Set</li>
+        <li>• Midtown Rhythms — Live Band</li>
+        <li>• Harmony Lane — Vocal Trio</li>
+        <li>• Trenton Cypher — Special Guests</li>
+        <li>• DJ Finale — Afterparty Mix</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ARTISTS STRIP -->
+  <section id="artists" class="wrap">
+    <div class="artists" role="img" aria-label="Guitarist performing live">
+      <div>
+        <h2>Featured Artists &amp; Collaborators</h2>
+        <p>Spotlight performances from local talent and surprise guest appearances. Discover new sounds and support the community.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / CONTACT -->
+  <section class="wrap two" id="about">
+    <div class="card">
+      <h3>About Irie Sound Fest</h3>
+      <p>
+        Started by students and musicians from Mercer County, Irie Sound Fest celebrates culture, creativity, and community.
+        Powered by aspiring technologists and artists—bridging Computer Science and Cybersecurity with the arts.
+      </p>
+    </div>
+    <div class="card" id="contact">
+      <h3>Contact</h3>
+      <p>
+        Questions, press, or sponsorships?<br />
+        Email: <a href="mailto:itashahowell@icloud.com">itashahowell@icloud.com</a><br />
+        Phone: <a href="tel:+16097804664">609-780-4664</a><br />
+        Location: 1285 Hamilton Ave, Trenton, NJ 08629
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Irie Sound Fest • All rights reserved
+  </footer>
+
+  <!-- Corrected AUDIO -->
+  <audio id="mysound" preload="auto">
+    <source src="5 Seconds of Summer - Lie To Me.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    // Set the year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
+
+    // Audio play/pause
+    const audio = document.getElementById('mysound');
+    const toggle = document.getElementById('playToggle');
+    const iconEl = document.getElementById('iconEmoji');
+
+    toggle.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        iconEl.textContent = '⏸️';
+      } else {
+        audio.pause();
+        iconEl.textContent = '▶️';
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      iconEl.textContent = '▶️';
+    });
+  </script>
+</body>
+</html>
