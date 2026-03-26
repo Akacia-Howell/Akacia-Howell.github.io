@@ -1,13 +1,320 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=Website%20Project/index.html">
-  <title>Redirecting…</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akacia Howell — Portfolio</title>
+  <meta name="description" content="Portfolio of Akacia Howell — Computer Science student focusing on Cybersecurity. Projects, skills, achievements, and contact." />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#121826;
+      --ink:#e5e7eb;
+      --muted:#a7b0bf;
+      --brand:#64d2ff;
+      --ring:#223048;
+      --accent:#9dff90;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background: url('https://images.wallpapersden.com/image/download/cybersecurity-core_bmdrZ2mUmZqaraWkpJRmbmdsrWZlbWU.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{opacity:.9}
+    .wrap{max-width:1100px; margin:0 auto; padding:0 20px}
+    header{
+      position:sticky; top:0; z-index:10;
+      background:rgba(11,15,20,.7); backdrop-filter: blur(6px);
+      border-bottom:1px solid var(--ring);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:12px 0;
+    }
+    .nav .brand{font-weight:700; letter-spacing:.3px}
+    .nav ul{display:flex; gap:16px; list-style:none; margin:0; padding:0}
+    .btn{
+      display:inline-block; padding:10px 14px; border-radius:10px;
+      background:linear-gradient(90deg, var(--brand), #8fbaff);
+      color:#09111c; font-weight:700; box-shadow:0 6px 16px rgba(100,210,255,.25);
+      cursor:pointer;
+    }
+
+    .hero{
+      padding:64px 0 28px;
+    }
+    .hero .frame{
+      background:rgba(0,0,0,.55);
+      border:1px solid var(--ring);
+      border-radius:16px;
+      padding:24px;
+    }
+    .hero h1{font-size:clamp(28px, 4vw, 40px); margin:6px 0 8px}
+    .hero p{color:var(--muted); margin:6px 0}
+    .hero img{width:200px; border-radius:50%; border:2px solid var(--brand); display:block; margin:0 auto 10px}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .chip{
+      padding:6px 10px; border:1px solid var(--ring); border-radius:999px;
+      color:var(--muted); font-size:13px
+    }
+
+    section{padding:32px 0}
+    section .panel{background:rgba(0,0,0,.45); border:1px solid var(--ring); border-radius:16px; padding:18px}
+    h2{font-size:clamp(20px, 3vw, 26px); margin:0 0 14px}
+
+    .grid{display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));}
+    .card{
+      background:rgba(18,24,38,0.9); border:1px solid var(--ring);
+      border-radius:14px; overflow:hidden; transition:transform .15s ease, box-shadow .15s ease;
+      box-shadow:0 1px 2px rgba(0,0,0,.2);
+    }
+    .card:hover{transform:translateY(-3px); box-shadow:0 10px 24px rgba(0,0,0,.35)}
+    .thumb{width:100%; aspect-ratio:16/9; object-fit:cover; display:block}
+    .body{padding:14px}
+    .title{font-weight:700; margin:0 0 6px}
+    .meta{font-size:13px; color:var(--muted); margin-bottom:8px}
+    .pill{display:inline-block; padding:4px 8px; border-radius:8px; background:#0e2136; color:#b7d3ff; font-size:12px; margin-right:6px; border:1px solid #274467;}
+
+    .two-col{display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));}
+    ul.clean{margin:8px 0 0 18px}
+    footer{padding:28px 0; text-align:center; color:var(--muted)}
+
+    /* Card links */
+    .card-link{
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    }
+  </style>
 </head>
 <body>
-  <p>If you are not redirected automatically,
-     <a href="Website%20Project/index.html">click here</a>.
-  </p>
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand">Akacia Howell</div>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#edu">Education</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+	  <li><a href="#terminal">Terminal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap frame">
+      <h1> My Cybersecurity Journey</h1>
+      <p>I am deeply passionate about pursuing a career in cybersecurity because I genuinely value the role it plays in protecting people, organizations, and critical systems in today’s digital world. As technology continues to expand into every aspect of life, the importance of securing data and preventing cyber threats has become more urgent than ever. I am driven by the responsibility and impact that cybersecurity professionals have in defending against attacks and maintaining trust in digital systems. My background in computer science has strengthened both my technical skills and my commitment to this field. What excites me most is the constant evolution of cybersecurity, which challenges me to continuously learn, think critically, and stay ahead of emerging threats. This field is not just a career choice for me, it is something I truly care about, as it allows me to make a meaningful difference while doing work that I genuinely enjoy.
+.</p>
+
+      <div class="badges">
+        <a class="btn" href="AkaciaHowell Resume.pdf" download>Download Résumé</a>
+      </div>
+
+      <div style="margin-top:15px;">
+        <button class="btn" id="voiceButton">▶ My Voice</button>
+      </div>
+
+      <audio id="mysound" preload="auto">
+        <source src="myvoice.mp3" type="audio/mpeg" />
+      </audio>
+
+    </div>
+  </section>
+
+<!-- Research Projects -->
+<section id="projects">
+  <div class="wrap panel">
+    <h2>Projects</h2>
+    <div class="grid">
+
+      <!-- User vs Kernel Mode: How Operating Systems Protect Web Applications -->
+      <a href="How Operating Systems Protect Web Appliactions.pdf" class="card-link" target="_blank">
+        <article class="card">
+          <img class="thumb" src="https://tse1.mm.bing.net/th/id/OIP.zcaRZOzf8JNSwnL45Ed6wQHaEK?pid=ImgDet&w=187&h=105&c=7&dpr=1.3&o=7&rm=3">
+          <div class="body"><p class="title">User vs Kernel Mode: How Operating Systems Protect Web Applications</p></div>
+        </article>
+      </a>
+
+      <!-- Algorithmic Analysis of Malware Detection Techniques -->
+      <a href="Algorithmic Analysis of Malware Detection Techniques.pdf" class="card-link" target="_blank">
+        <article class="card">
+          <img class="thumb" src="https://tse4.mm.bing.net/th/id/OIP.L10CEeFWBJIqOmSwmkCFOAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3">
+          <div class="body"><p class="title">Algorithmic Analysis of Malware Detection Techniques Page</p></div>
+        </article>
+      </a>
+
+    </div>
+  </div>
+<section id="terminal">
+  <div class="wrap panel">
+    <h2>Cybersecurity Terminal</h2>
+
+    <div style="background:black; padding:15px; border-radius:10px; font-family:monospace;">
+      <p style="color:#64ffda;">Type a command:</p>
+
+      <input id="cmd" placeholder="try: scan, help, about" 
+             style="width:100%; padding:8px; background:#111; color:white; border:none; outline:none;">
+
+      <button class="btn" onclick="runCommand()" style="margin-top:10px;">Run</button>
+
+      <p id="output" style="margin-top:10px; color:#9dff90;"></p>
+    </div>
+  </div>
+</section>
+</section>
+  <!-- Skills -->
+  <section id="skills">
+    <div class="wrap panel">
+      <h2>Skills</h2>
+      <div class="two-col">
+        <div class="card body">
+          <p class="title">Technical</p>
+          <ul class="clean">
+            <li>Languages: JavaScript and Python</li>
+            <li>Web: HTML and CSS</li>
+            <li>Tools: Git & GitHub
+            <li>Cybersecurity: Wireshark, Nmap, Linux basics</li>
+          </ul>
+        </div>
+
+        <div class="card body">
+          <p class="title">Professional</p>
+          <ul class="clean">
+            <li>Mentoring & peer tutoring (DREAM program)</li>
+            <li>Team collaboration & communication</li>
+            <li>Time management & project planning</li>
+            <li>Accessibility and clear documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="edu">
+    <div class="wrap panel">
+      <h2>Education & Experience</h2>
+      <div class="two-col">
+        <div class="card body">
+          <p class="title">Education</p>
+          <ul class="clean">
+            <li><strong>MCCC</strong> — A.S. in Computer Science</li>
+            <li><strong>Rider University</strong> — B.S. in Cybersecurity (In Progress)</li>
+          </ul>
+        </div>
+
+        <div class="card body">
+          <p class="title">Mentoring & Campus</p>
+          <ul class="clean">
+            <li>DREAM mentor: assist with assignments & study plans</li>
+            <li>Collaborated on Java & web group projects</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements">
+    <div class="wrap panel">
+      <h2>Achievements</h2>
+      <div class="grid">
+        <div class="card body">
+          <p class="title">Academic</p>
+          <p class="meta">Consistent high grades</p>
+        </div>
+        <div class="card body">
+          <p class="title">Leadership</p>
+          <p class="meta">Peer mentoring & project assistance</p>
+        </div>
+        <div class="card body">
+          <p class="title">Scholarship</p>
+          <p class="meta">Accepted to Rider with scholarship</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="wrap panel">
+      <h2>Contact</h2>
+      <div class="two-col">
+        <div class="card body">
+          <p class="title">Get in touch</p>
+          <p>Email: <a href="mailto:itashahowell19@gamil.com">itashahowell19@gmail.com</a></p>
+          <p>Location: Trenton, NJ</p>
+          <p><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></p>
+        </div>
+
+        <div class="card body">
+          <p class="title">Opportunities</p>
+          <p>I’m interested in internships and CS/cybersecurity projects.</p>
+          <a class="btn" href="mailto:itashahowell@icloud.com?subject=Opportunity for Akacia">Email Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© 2025 · Akacia Howell · All rights reserved</div>
+  </footer>
+
+  <script>
+    const audio = document.getElementById("mysound");
+    const button = document.getElementById("voiceButton");
+
+    button.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        button.textContent = "⏸ Pause";
+      } else {
+        audio.pause();
+        button.textContent = "▶ My Voice";
+      }
+    });
+
+    audio.addEventListener("ended", () => {
+      button.textContent = "▶ My Voice";
+    });
+  </script>
+<script>
+function runCommand(){
+  const input = document.getElementById("cmd").value.toLowerCase();
+  let output = "";
+
+  if(input === "scan"){
+    output = "Scanning system... ✔ No threats found.";
+  } 
+  else if(input === "help"){
+    output = "Available commands: scan, help, about";
+  } 
+  else if(input === "about"){
+    output = "This terminal simulates cybersecurity commands used in analysis.";
+  } 
+  else{
+    output = "Command not recognized. Type 'help'.";
+  }
+
+  document.getElementById("output").innerText = output;
+}
+</script>
+<script>
+document.getElementById("cmd").addEventListener("keypress", function(e){
+  if(e.key === "Enter"){
+    runCommand();
+  }
+});
+</script>
 </body>
 </html>
