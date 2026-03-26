@@ -102,7 +102,8 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#edu">Education</a></li>
           <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#contact" class="btn">Contact</a></li>
+	  <li><a href="#terminal">Terminal</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -111,14 +112,12 @@
   <!-- Hero -->
   <section class="hero">
     <div class="wrap frame">
-      <img src="myphoto.jpg" alt="Akacia Howell">
-      <h1>Computer Science Student · Cybersecurity Focus</h1>
-      <p>I build secure, user-friendly tools and help peers grow through mentorship. Currently studying CS at MCCC and preparing to transfer to Rider University.</p>
+      <h1> My Cybersecurity Journey</h1>
+      <p>I am deeply passionate about pursuing a career in cybersecurity because I genuinely value the role it plays in protecting people, organizations, and critical systems in today’s digital world. As technology continues to expand into every aspect of life, the importance of securing data and preventing cyber threats has become more urgent than ever. I am driven by the responsibility and impact that cybersecurity professionals have in defending against attacks and maintaining trust in digital systems. My background in computer science has strengthened both my technical skills and my commitment to this field. What excites me most is the constant evolution of cybersecurity, which challenges me to continuously learn, think critically, and stay ahead of emerging threats. This field is not just a career choice for me, it is something I truly care about, as it allows me to make a meaningful difference while doing work that I genuinely enjoy.
+.</p>
 
       <div class="badges">
-        <span class="chip">Java · Python </span>
-        <span class="chip">HTML · CSS </span>
-        <a class="btn" href="Akacia_Howell_Resume.pdf" download>Download Résumé</a>
+        <a class="btn" href="AkaciaHowell Resume.pdf" download>Download Résumé</a>
       </div>
 
       <div style="margin-top:15px;">
@@ -132,78 +131,46 @@
     </div>
   </section>
 
-<!-- Projects -->
+<!-- Research Projects -->
 <section id="projects">
   <div class="wrap panel">
     <h2>Projects</h2>
     <div class="grid">
 
-      <!-- VS CODE -->
-      <a href="Week 1-VS-code/index.html" class="card-link" target="_blank">
+      <!-- User vs Kernel Mode: How Operating Systems Protect Web Applications -->
+      <a href="How Operating Systems Protect Web Appliactions.pdf" class="card-link" target="_blank">
         <article class="card">
-          <img class="thumb" src="https://picsum.photos/seed/vscode/800/450">
-          <div class="body"><p class="title">VSCode</p></div>
+          <img class="thumb" src="https://tse1.mm.bing.net/th/id/OIP.zcaRZOzf8JNSwnL45Ed6wQHaEK?pid=ImgDet&w=187&h=105&c=7&dpr=1.3&o=7&rm=3">
+          <div class="body"><p class="title">User vs Kernel Mode: How Operating Systems Protect Web Applications</p></div>
         </article>
       </a>
 
-      <!-- TRIBUTE PAGE -->
-      <a href="Week 2-Tribute Page/index.html" class="card-link" target="_blank">
+      <!-- Algorithmic Analysis of Malware Detection Techniques -->
+      <a href="Algorithmic Analysis of Malware Detection Techniques.pdf" class="card-link" target="_blank">
         <article class="card">
-          <img class="thumb" src="https://picsum.photos/seed/tribute/800/450">
-          <div class="body"><p class="title">Tribute Page</p></div>
-        </article>
-      </a>
-
-      <!-- SURVEY -->
-      <a href="Week 3-Survey/index.html" class="card-link" target="_blank">
-        <article class="card">
-          <img class="thumb" src="https://picsum.photos/seed/survey/800/450">
-          <div class="body"><p class="title">Survey</p></div>
-        </article>
-      </a>
-
-      <!-- PARALLAX WEBSITE -->
-      <a href="Week 4-Parallax Website/index.html" class="card-link" target="_blank">
-        <article class="card">
-          <img class="thumb" src="https://picsum.photos/seed/parallax/800/450">
-          <div class="body"><p class="title">Parallax Website</p></div>
-        </article>
-      </a>
-
-      <!-- RESTAURANT PAGE -->
-      <a href="Week 5-Restaurant Page/index.html" class="card-link" target="_blank">
-        <article class="card">
-          <img class="thumb" src="https://picsum.photos/seed/restaurant/800/450">
-          <div class="body"><p class="title">Restaurant Page</p></div>
-        </article>
-      </a>
-
-      <!-- CONFERENCE PAGE -->
-      <a href="Week 6-Conference Page/index.html" class="card-link" target="_blank">
-        <article class="card">
-          <img class="thumb" src="https://picsum.photos/seed/conference/800/450">
-          <div class="body"><p class="title">Conference Page</p></div>
-        </article>
-      </a>
-
-      <!-- MUSIC STORE -->
-      <a href="Week 6-Music Store/index.html" class="card-link" target="_blank">
-        <article class="card">
-          <img class="thumb" src="https://picsum.photos/seed/music/800/450">
-          <div class="body"><p class="title">Music Store</p></div>
-        </article>
-      </a>
-
-      <!-- PHOTOGRAPHY -->
-      <a href="Week 7-Photography/index.html" class="card-link" target="_blank">
-        <article class="card">
-          <img class="thumb" src="https://picsum.photos/seed/photo/800/450">
-          <div class="body"><p class="title">Photography</p></div>
+          <img class="thumb" src="https://tse4.mm.bing.net/th/id/OIP.L10CEeFWBJIqOmSwmkCFOAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3">
+          <div class="body"><p class="title">Algorithmic Analysis of Malware Detection Techniques Page</p></div>
         </article>
       </a>
 
     </div>
   </div>
+<section id="terminal">
+  <div class="wrap panel">
+    <h2>Cybersecurity Terminal</h2>
+
+    <div style="background:black; padding:15px; border-radius:10px; font-family:monospace;">
+      <p style="color:#64ffda;">Type a command:</p>
+
+      <input id="cmd" placeholder="try: scan, help, about" 
+             style="width:100%; padding:8px; background:#111; color:white; border:none; outline:none;">
+
+      <button class="btn" onclick="runCommand()" style="margin-top:10px;">Run</button>
+
+      <p id="output" style="margin-top:10px; color:#9dff90;"></p>
+    </div>
+  </div>
+</section>
 </section>
   <!-- Skills -->
   <section id="skills">
@@ -213,10 +180,9 @@
         <div class="card body">
           <p class="title">Technical</p>
           <ul class="clean">
-            <li>Languages: Java, Python, C, JavaScript</li>
-            <li>Web: HTML, CSS, DOM, Responsive Design</li>
-            <li>Databases: MySQL</li>
-            <li>Tools: Git & GitHub, VS Code</li>
+            <li>Languages: JavaScript and Python</li>
+            <li>Web: HTML and CSS</li>
+            <li>Tools: Git & GitHub
             <li>Cybersecurity: Wireshark, Nmap, Linux basics</li>
           </ul>
         </div>
@@ -243,8 +209,7 @@
           <p class="title">Education</p>
           <ul class="clean">
             <li><strong>MCCC</strong> — A.S. in Computer Science</li>
-            <li><strong>Rider University</strong> — Accepted for Cybersecurity</li>
-            <li>Coursework: Data Structures, Discrete Math, Physics, Chemistry</li>
+            <li><strong>Rider University</strong> — B.S. in Cybersecurity (In Progress)</li>
           </ul>
         </div>
 
@@ -287,14 +252,14 @@
       <div class="two-col">
         <div class="card body">
           <p class="title">Get in touch</p>
-          <p>Email: <a href="mailto:itashahowell@icloud.com">itashahowell@icloud.com</a></p>
+          <p>Email: <a href="mailto:itashahowell19@gamil.com">itashahowell19@gmail.com</a></p>
           <p>Location: Trenton, NJ</p>
           <p><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></p>
         </div>
 
         <div class="card body">
           <p class="title">Opportunities</p>
-          <p>I’m interested in internships, CS/cybersecurity projects, and tutoring roles.</p>
+          <p>I’m interested in internships and CS/cybersecurity projects.</p>
           <a class="btn" href="mailto:itashahowell@icloud.com?subject=Opportunity for Akacia">Email Me</a>
         </div>
       </div>
@@ -323,7 +288,33 @@
       button.textContent = "▶ My Voice";
     });
   </script>
+<script>
+function runCommand(){
+  const input = document.getElementById("cmd").value.toLowerCase();
+  let output = "";
 
+  if(input === "scan"){
+    output = "Scanning system... ✔ No threats found.";
+  } 
+  else if(input === "help"){
+    output = "Available commands: scan, help, about";
+  } 
+  else if(input === "about"){
+    output = "This terminal simulates cybersecurity commands used in analysis.";
+  } 
+  else{
+    output = "Command not recognized. Type 'help'.";
+  }
+
+  document.getElementById("output").innerText = output;
+}
+</script>
+<script>
+document.getElementById("cmd").addEventListener("keypress", function(e){
+  if(e.key === "Enter"){
+    runCommand();
+  }
+});
+</script>
 </body>
 </html>
-
